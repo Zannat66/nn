@@ -1,0 +1,32 @@
+qustion 6
+
+def forward_activation (self,X):
+  self.activation_function == "tanh":
+  return np.tanh(X)
+ elif algo == "AdaGrad":
+        self.grad(X, Y)
+        for i in range(1,self.num_layers+1):
+          self.update_params["v_w"+str(i)] += (self.gradients["dW"+str(i)]/m)**2
+          self.update_params["v_b"+str(i)] += (self.gradients["dB"+str(i)]/m)**2
+          self.params["W"+str(i)] -= (eta/(np.sqrt(self.update_params["v_w"+str(i)])+eps)) * (self.gradients["dW"+str(i)]/m)
+          self.params["B"+str(i)] -= (eta/(np.sqrt(self.update_params["v_b"+str(i)])+eps)) * (self.gradients["dB"+str(i)]/m)
+
+       for init_method in ['zeros', 'random', 'xavier', 'he']:
+       for activation_function in ['tanh']:
+     print(init_method, activation_function)
+     model = FFNetwork(init_method=init_method, activation_function=activation_function)
+     model.fit(X_train, y_OH_train, epochs=100, eta=0.5, algo="NAG", display_loss=True)
+     post_process(plot_scale=0.05)
+     print('\n--\n')
+
+
+question 7
+
+ elif algo == "RMSProp":
+        self.grad(X, Y)
+        for i in range(1,self.num_layers+1):
+          self.update_params["v_w"+str(i)] = beta*self.update_params["v_w"+str(i)] +(1-beta)*((self.gradients["dW"+str(i)]/m)**2)
+          self.update_params["v_b"+str(i)] = beta*self.update_params["v_b"+str(i)] +(1-beta)*((self.gradients["dB"+str(i)]/m)**2)
+          self.params["W"+str(i)] -= (eta/(np.sqrt(self.update_params["v_w"+str(i)]+eps)))*(self.gradients["dW"+str(i)]/m)
+          self.params["B"+str(i)] -= (eta/(np.sqrt(self.update_params["v_b"+str(i)]+eps)))*(self.gradients["dB"+str(i)]/m)
+      
